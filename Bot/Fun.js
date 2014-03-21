@@ -1010,7 +1010,7 @@ function chatMe(msg)
                                     break;
                             }
                         }else{
-                            if(command[1].typeof("@") === 0) command[1] = command[1].substring(1);
+                            if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomSentence = Math.floor(Math.random() * 3);
