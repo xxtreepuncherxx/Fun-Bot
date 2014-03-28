@@ -86,7 +86,8 @@ var blockedSongs = [
     "The Fox",
     "The Fox [Official music video HD]",
     "10 hour",
-    "Trololo"
+    "Trololo",
+    "#SELFIE (Official Music Video)"
 ];
 
 // Keywords of blocked artist.
@@ -95,7 +96,8 @@ var blockedArtists = [
     "Miley Cyrus",
     "Eduard Khil",
     "Justin Bieber",
-    "Lil wayne"
+    "Lil wayne",
+    "Chainsmokers"
 ];
 
 // Filter Keywords
