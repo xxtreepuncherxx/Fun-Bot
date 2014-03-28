@@ -493,14 +493,13 @@ function chatMe(msg)
                         }
                         break;        
                         
-                case "ban":
+                case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
-                            API.moderateBanUser(cmd[1]);
-                       }else{
-                            API.sendChat("This command requires bouncer only!");
-                            }
+                           API.moderateBanUser(command[1]);
+                        }else{
+                         API.sendChat("This command requires Bouncer only!");
                         }
-                        break;        
+                        break;
                         
                 case "skip":
                         if(API.getUser(data.fromID).permission > 1){
