@@ -493,7 +493,7 @@ function chatMe(msg)
                         }
                         break;        
                         
-                case "say":
+                case "ban":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
                            API.moderateBanUser(command[1]);
                         }else{
