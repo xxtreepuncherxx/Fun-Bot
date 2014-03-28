@@ -48,7 +48,7 @@ toSave = {};
 toSave.settings = Funbot.settings;
 toSave.moderators = Funbot.moderators;
  
-Funbot.misc.version = "1.0.49";
+Funbot.misc.version = "1.0.51";
 Funbot.misc.origin = "This bot was created by DJ - ɴᴇᴏɴ - TFL, and it is copyrighted!";
 Funbot.misc.ready = true;
 var songBoundary = 60 * 10;
@@ -494,14 +494,6 @@ function chatMe(msg)
                             API.sendChat("This command requires staff members only!");
                         }
                         break;        
-                        
-                case "ban":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
-                           API.moderateBanUser(command[1]);
-                        }else{
-                         API.sendChat("This command requires Bouncer only!");
-                        }
-                        break;
                         
                 case "skip":
                         if(API.getUser(data.fromID).permission > 1){
