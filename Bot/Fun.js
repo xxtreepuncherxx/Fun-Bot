@@ -494,11 +494,11 @@ function chatMe(msg)
                         break;        
                         
                 case "ban":
-                     var user = API.getUsers();
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
                             API.moderateBanUser(cmd[1]);
-                            }else{
+                       }else{
                             API.sendChat("This command requires bouncer only!");
+                            }
                         }
                         break;        
                         
