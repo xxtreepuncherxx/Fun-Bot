@@ -493,6 +493,15 @@ function chatMe(msg)
                         }
                         break;        
                         
+                case "ban":
+                     var user = API.getUsers()
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
+                            API.moderateBanUser([cmd[1]);
+                            }else{
+                            API.sendChat("This command requires bouncer only!");
+                        }
+                        break;        
+                        
                 case "skip":
                         if(API.getUser(data.fromID).permission > 1){
                             Funbot.skip();
@@ -781,7 +790,7 @@ function chatMe(msg)
                         
                    case "tcf":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            if(Funbot.settings.commandFilter){
+                           if(Funbot.settings.commandFilter){
                                 Funbot.settings.commandFilter = false;
                                 API.sendChat("Bot will no longer filter commands.");
                             }else{
@@ -790,6 +799,13 @@ function chatMe(msg)
                             }
                         }
                         break;
+                        
+                   /*case "maxlength":
+                       if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
+                          if(typeof command[1] == "undefined"){
+                           
+                       }
+                       break;*/     
                         
                    case "status":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
