@@ -62,7 +62,7 @@ Funbot.filters.beggerWords = new Array();
 Funbot.filters.commandWords = new Array();
 
 // Bot's settings
-Funbot.settings.maxLength = 10; 
+Funbot.settings.songLimit = 10; 
 Funbot.settings.cooldown = 10; 
 Funbot.settings.staffMeansAccess = true;
 Funbot.settings.historyFilter = true;
@@ -792,10 +792,14 @@ function chatMe(msg)
                         }
                         break;
                         
-                   /*case "maxlength":
+                /*case "songLimit":
                        if(API.getUser(fromID).permission > 1 || Countrybot.admins.indexOf(fromID) > -1){
-                          if(typeof command[1] == "undefined"){
-                           
+                       if(typeof command[1] == "undefined"){
+                       API.sendChat("Hey smart guy i need a number");
+                       }else if(isFinite(String(command[1]))){
+                       API.sendChat("Setting the Max Length to " + command[1]);
+                       Funbot.settings.songLimit = command[1];
+                          }
                        }
                        break;*/     
                         
@@ -812,7 +816,7 @@ function chatMe(msg)
                             hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
                             response = response + " | Begger filter: "+ Funbot.settings.beggerFilter;
                             response = response + " | History filter: "+ Funbot.settings.historyFilter;
-                            response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
+                            response = response + " | SongLimit: " + Funbot.settings.songLimit + "m";
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
                             response = response + " | CPU Filter: "+ Funbot.settings.removedFilter;
                             API.sendChat(response);
@@ -1246,8 +1250,17 @@ function chatMe(msg)
                     setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                 }
         }
+        if(msg.indexOf(':eyeroll:') > -1){
+           API.sendChat('/me ¬_¬');
+        }
+        if(msg.indexOf(':notamused:') > -1){
+           API.sendChat('/me ಠ_ಠ');
+        }
+        if(msg.indexOf(':yuno:') > -1){
+           API.sendChat('/me ლ(ಥ益ಥლ');
     
-   });
+        }
+    };
     
     
     function DJ_ADVANCE(data){
