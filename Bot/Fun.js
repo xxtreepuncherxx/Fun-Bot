@@ -1260,7 +1260,7 @@ function chatMe(msg)
            API.sendChat('/me ლ(ಥ益ಥლ');
     
         }
-    };
+    });
     
     
     function DJ_ADVANCE(data){
