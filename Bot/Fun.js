@@ -458,15 +458,15 @@ function chatMe(msg)
                         if(typeof command[1] == "undefined"){
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                           API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
                         }, 100);
                         setTimeout(function(){
-                           API.sendChat("creator | bf | cf | tbf | tcf.");
+                           API.sendChat("creator | status | bf | cf | tbf | tcf");
                         }, 600);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status | reload | die");
+                            API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
                         setTimeout(function(){
-                           API.sendChat("creator | bf | cf | tbf | tcf.");
+                           API.sendChat("creator | status | bf | cf | tbf | tcf");
                         }, 600);
                         }
                         break;
@@ -955,6 +955,68 @@ function chatMe(msg)
                            }
                         }
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                            Funbot.misc.ready = false;
+                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                        
+                    case "punish":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomSentence = Math.floor(Math.random() * 6);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
+                                    break;
+                                case 1:
+                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
+                                    break;
+                                case 2:
+                                    API.sendChat("/me pokes "+command[1]+" in the eyes");
+                                    break;
+                                case 3:
+                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
+                                    break;
+                                case 4:
+                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
+                                    break;
+                                case 5:
+                                    API.sendChat("/me gives "+command[1]+" a wet willy");
+                                    break;
+                                case 6:
+                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomSentence = Math.floor(Math.random() * 6);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
+                                    break;
+                                case 1:
+                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
+                                    break;
+                                case 2:
+                                    API.sendChat("/me pokes "+command[1]+" in the eyes");
+                                    break;
+                                case 3:
+                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
+                                    break;
+                                case 4:
+                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
+                                    break;
+                                case 5:
+                                    API.sendChat("/me gives "+command[1]+" a wet willy");
+                                    break;
+                                case 6:
+                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
+                                    break;
+                            }
+                        }
+                        if(Funbot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
