@@ -96,8 +96,7 @@ var blockedArtists = [
     "Miley Cyrus",
     "Eduard Khil",
     "Justin Bieber",
-    "Lil wayne",
-    "Chainsmokers"
+    "Lil wayne"
 ];
 
 // Filter Keywords
