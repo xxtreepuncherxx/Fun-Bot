@@ -609,7 +609,7 @@ function chatMe(msg)
                         r = Math.floor(Math.random() * joindj.length);
                             API.sendChat(joindj[r].replace("user", data.from));
                             API.djJoin();
-                        }, 500);
+                        }, 100);
                         }else{
                            API.sendChat("This command requires bouncer +");
                         }
@@ -622,7 +622,7 @@ function chatMe(msg)
                         r = Math.floor(Math.random() * leavedj.length);
                             API.sendChat(leavedj[r].replace("user", data.from));
                             API.djLeave();
-                        }, 500);
+                        }, 100);
                         }else {
                            API.sendChat("This command requires bouncer +");
                         }
