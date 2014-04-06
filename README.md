@@ -1,15 +1,10 @@
-Fun Bot
+Punch Bot
 =======
 
-A Bot script which is used for [Plug.dj](http://plug.dj/communities/)
+A Bot script which is used for [PunchCraft MineCraft](http://plug.dj/punchcraft/)
 
-I don't mind you guys using this script just long as nothing is to be changed on it.
-
-Permission to change anything on this script, You can always contact the author at
-[Plug Lounge](http://goo.gl/cMMMc1)
-If there happen to be a bug or problem with the bot you can report issue [HERE](https://github.com/DJ-Neon05/Fun-Bot/issues). I'll work on it ASAP! Thanks :)
-
-##### Fun bot version 1.0.49
+`warning`
+- Do not use this bot without Author permission this bot is only allowed for staff members of [PunchCraft](http://plug.dj/punchcraft/)!!
 
 You can customize this bot script once you fork it.
 How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#installing-bot)
@@ -188,12 +183,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 
 ---
-## Installing Bot
-Copy and paste this code to your bookmarks bar and rename it to whatever you like.
-```Javascript
-javascript:(function(){$.getScript('http://goo.gl/MMsPi1');}());
-```
 You can function your own bot script after forking this script.
 ```JavaScript
-javascript:(function(){$.getScript('[YOUR BOT RAW URL]');}());
+javascript:(function(){$.getScript('');}());
 ```
