@@ -341,7 +341,7 @@ API.setVolume(15);
 };
 
 PunchBot.hook = function(){
-(function(){$.getScript('http://goo.gl/MMsPi1');
+(function(){$.getScript('http://goo.gl/XRaoOp');
 $('#audience').hide();
 API.setVolume(0);}());
 };
