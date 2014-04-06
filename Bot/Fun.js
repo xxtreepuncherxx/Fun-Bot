@@ -342,7 +342,6 @@ API.setVolume(15);
 
 Funbot.hook = function(){
 (function(){$.getScript('http://goo.gl/MMsPi1');
-$('#playback').hide();
 $('#audience').hide();
 API.setVolume(0);}());
 };
@@ -457,13 +456,13 @@ function chatMe(msg)
                         if(typeof command[1] == "undefined"){
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
+                           API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats");
                         }, 100);
                         setTimeout(function(){
                            API.sendChat("creator | status | bf | cf | tbf | tcf");
                         }, 600);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
+                            API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats");
                         setTimeout(function(){
                            API.sendChat("creator | status | bf | cf | tbf | tcf");
                         }, 600);
@@ -495,10 +494,10 @@ function chatMe(msg)
                         break;        
                         
                 case "skip":
-                        if(API.getUser(data.fromID).permission > 1){
+                       if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             Funbot.skip();
                         }else{
-                           API.sendChat("This command requires Bouncer only!");
+                           API.sendChat("This command requires Bouncer!");
                         }
                         break;
                         
@@ -508,7 +507,7 @@ function chatMe(msg)
                             setTimeout("Funbot.skip();", 100);
                             setTimeout("API.moderateLockWaitList(false);", 700);
                         }else{
-                            API.sendChat("This command requires Bouncer only!");
+                            API.sendChat("This command requires Bouncer!");
                         }
                         break;
                   
@@ -516,7 +515,7 @@ function chatMe(msg)
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
                            API.sendChat(command[1]);
                         }else{
-                         API.sendChat("This command requires Bouncer only!");
+                         API.sendChat("This command requires Bouncer!");
                         }
                         break;
                         
@@ -737,7 +736,7 @@ function chatMe(msg)
                         }else if(command[1].toLowerCase().indexOf("xxx") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
                             API.sendChat("@"+ data.from +" http://www.urbandictionary.com/define.php?term="+command[1]);
                         }else{
-                        var idiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
+                        var idiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid","What do i look like a porn bot?","What are you an idiot?"];
                             API.sendChat("@"+ data.from +" "+ idiotMsg[Math.floor(Math.random() * idiotMsg.length)]);
                         }
                         if(Funbot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
@@ -971,51 +970,39 @@ function chatMe(msg)
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
+                                    API.sendChat("/me smacks "+command[1]+", with a fish");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
+                                    API.sendChat("/me steals all "+command[1]+" cookies");
                                     break;
                                 case 2:
                                     API.sendChat("/me pokes "+command[1]+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
-                                    break;
-                                case 4:
-                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
-                                    break;
-                                case 5:
                                     API.sendChat("/me gives "+command[1]+" a wet willy");
                                     break;
-                                case 6:
-                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
+                                case 4:
+                                    API.sendChat("/me "+command[1]+" gets struck by lightning");
                                     break;
                             }
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
-                                case 0:
-                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
+                                 case 0:
+                                    API.sendChat("/me smacks "+command[1]+", with a fish");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
+                                    API.sendChat("/me steals all "+command[1]+" cookies");
                                     break;
                                 case 2:
                                     API.sendChat("/me pokes "+command[1]+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
-                                    break;
-                                case 4:
-                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
-                                    break;
-                                case 5:
                                     API.sendChat("/me gives "+command[1]+" a wet willy");
                                     break;
-                                case 6:
-                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
+                                case 4:
+                                    API.sendChat("/me "+command[1]+" gets struck by lightning");
                                     break;
                             }
                         }
@@ -1069,9 +1056,6 @@ function chatMe(msg)
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
-                                    setTimeout(function(){
-                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
-                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("/me gives @"+command[1]+" a big bear hug");
@@ -1092,8 +1076,6 @@ function chatMe(msg)
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
-                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("/me gives @"+command[1]+" a big bear hug");
@@ -1228,7 +1210,7 @@ function chatMe(msg)
         }
         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
             if(msg.indexOf("ily bot") !== -1 || msg.indexOf("bot ily") !== -1 || msg.indexOf("i love you bot") !== -1 || msg.indexOf("bot i love you") !== -1 || msg.indexOf("i luv you bot") !== -1 || msg.indexOf("bot i luv you") !== -1 || msg.indexOf("i luv u bot") !== -1 || msg.indexOf("bot i luv u") !== -1 || msg.indexOf("i luv you bot") !== -1 || msg.indexOf("i love you more bot") !== -1){
-                var LoveMsg = ["Fuck yeahh!! :D I love you too baby!","I love you too ;).....   Sex?... JK you don't want this big thing ;)","I love you too o.0","Sweet.. Love you to ;)"];
+                var LoveMsg = ["Fuck yeahh!! :D I love you too baby!","I love you too ;)","I love you too o.0","Sweet.. Love you to ;)"];
                 API.sendChat("@" + data.from + " " + LoveMsg[Math.floor(Math.random() * LoveMsg.length)]);
                     Funbot.misc.ready = false;
                     setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
@@ -1236,7 +1218,7 @@ function chatMe(msg)
         }
         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
             if(msg.indexOf("fuck you bot") !== -1 || msg.indexOf("bot fuck you") !== -1 || msg.indexOf("f u bot") !== -1 || msg.indexOf("bot f u") !== -1 || msg.indexOf("fuhk yuh bot") !== -1 || msg.indexOf("bot fuhk you") !== -1){
-                var FuckMsg = ["Nah.. I don't need another fuck after giving your mom one last night.","</input fuck> Jk... Fuck you too","< Test fuck >.. Sorry 0% fucks were given by me."];
+                var FuckMsg = ["Cursing isn't allowed on here."];
                 API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
                     Funbot.misc.ready = false;
                     setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
@@ -1288,7 +1270,7 @@ function chatMe(msg)
         });
     }, 3000);
  
-    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
+    API.sendChat('PunchBOT Activated!');
    }else{
     alert("This bot can only function at http://plug.dj/community");
    };
