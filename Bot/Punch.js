@@ -468,6 +468,40 @@ function chatMe(msg)
                         }, 600);
                         }
                         break;
+                        
+                case "theme":
+                case "themes":
+                        if(typeof command[1] == "undefined"){
+                        setTimeout(function(){
+                           API.sendChat("[Allowed]:  [Not Allowed]: ");
+                        }, 100);
+                        setTimeout(function(){
+                           API.sendChat("[Note]: Ask Moderators for more info(s) about themes (that is allowed).");
+                        }, 600);
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" [Allowed]: [Not Allowed]: ");
+                        setTimeout(function(){
+                           API.sendChat("[Note]: Ask Moderators for more info(s) about themes (that is allowed).");
+                        }, 600);
+                        }
+                        break;
+ 
+                case "rule":
+                case "rules":
+                        if(typeof command[1] == "undefined"){
+                        setTimeout(function(){
+                           API.sendChat("[Rules]: (1) Do not play troll songs. (2) Don't ask for ranks. (3) Follow the theme. (4) Don't spam.");
+                        }, 100);
+                        setTimeout(function(){
+                           API.sendChat("(5) No Advertising ANY Rooms (Pics are fine). (6) No songs over 5 minutes unless approved by Staff Members. (7) Videos MUST be appropriate for users under 14.");
+                        }, 600);
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" [Rules]: (1) Do not play troll songs. (2) Don't ask for ranks. (3) Follow the theme. (4) Don't spam.");
+                        setTimeout(function(){
+                           API.sendChat("(5) No Advertising ANY Rooms (Pics are fine). (6) No songs over 5 minutes unless approved by Staff Members. (7) Videos MUST be appropriate for users under 14.");
+                        }, 600);
+                        }
+                        break;        
                 
                 case "test":
                         if(PunchBot.admins.indexOf(fromID) > -1){
