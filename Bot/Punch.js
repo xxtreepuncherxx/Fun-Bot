@@ -1054,6 +1054,9 @@ function chatMe(msg)
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
+                                    setTimeout(function(){
+                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("/me gives @"+command[1]+" a big bear hug");
@@ -1074,6 +1077,8 @@ function chatMe(msg)
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
+                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("/me gives @"+command[1]+" a big bear hug");
