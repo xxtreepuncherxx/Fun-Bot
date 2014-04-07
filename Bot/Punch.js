@@ -464,7 +464,7 @@ function chatMe(msg)
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
                         setTimeout(function(){
-                           API.sendChat("creator | status | bf | cf | tbf | tcf");
+                           API.sendChat("creator | status | bf | cf | tbf | tcf | lock | unlock");
                         }, 600);
                         }
                         break;
@@ -534,6 +534,22 @@ function chatMe(msg)
                            API.sendChat("This command requires staff members only!");
                         }
                         break;
+                        
+                case "unlock":
+                       if(API.getUser(fromID).permission > 1 || PunchBot.admins.indexOf(fromID) > -1){
+                            API.moderateLockWaitList(false);
+                        }else{
+                           API.sendChat("This command requires staff members only!");
+                        }
+                        break;
+               
+                    case "lock":
+                       if(API.getUser(fromID).permission > 1 || PunchBot.admins.indexOf(fromID) > -1){
+                            API.moderateLockWaitList(true);
+                        }else{
+                           API.sendChat("This command requires staff members only!");
+                        }
+                        break;        
                         
                 case "lockskip":
                        if(API.getUser(fromID).permission > 1 || PunchBot.admins.indexOf(fromID) > -1){
