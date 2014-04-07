@@ -180,10 +180,3 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 #Neon: .roomstats
 #plugbot: Room Statistics - Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 0 | Skips: 0 | Joins: 0 |
 ```
-
-
----
-You can function your own bot script after forking this script.
-```JavaScript
-javascript:(function(){$.getScript('');}());
-```
