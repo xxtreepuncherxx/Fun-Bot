@@ -460,12 +460,12 @@ function chatMe(msg)
                             API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
                         }, 100);
                         setTimeout(function(){
-                           API.sendChat("creator | status | bf | cf | tbf | tcf | lock | unlock");
+                           API.sendChat("addme | removeme | creator | status | bf | cf | tbf | tcf | lock | unlock");
                         }, 600);
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | punish | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source");
                         setTimeout(function(){
-                           API.sendChat("creator | status | bf | cf | tbf | tcf | lock | unlock");
+                           API.sendChat("adddme | removeme | creator | status | bf | cf | tbf | tcf | lock | unlock");
                         }, 600);
                         }
                         break;
@@ -533,6 +533,20 @@ function chatMe(msg)
                             PunchBot.skip();
                         }else{
                            API.sendChat("This command requires staff members only!");
+                        }
+                        break;
+                        
+                case "addme":
+                case "booth+":
+                        if(API.getUser(fromID).permission < 2 || PunchBot.admins.indexOf(fromID) > -1){
+                            API.moderateAddDJ(data.fromID);
+                        }
+                        break;
+                        
+                case "removeme":
+                case "booth-":
+                        if(API.getUser(fromID).permission < 2 || PunchBot.admins.indexOf(fromID) > -1){
+                            API.moderateRemoveDJ(data.fromID);
                         }
                         break;
                         
